@@ -1,6 +1,6 @@
 
 .navbar{
-    padding: 40px 300px;
+    padding: 40px 300px 10px 300px;
 }
 .navbar a{
     font-weight: bold;
@@ -19,4 +19,16 @@
 .navbar button:hover{
   color: white;
   border: 2px solid black;
+}
+
+/*LIST ITEMS*/
+.list-item-div{
+    padding: 40px 300px;
+}
+.list-group-item{
+    display: flex;
+}
+.counter{
+    display: flex;
+    justify-content: right;
 }
