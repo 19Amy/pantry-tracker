@@ -1,4 +1,6 @@
-
+.container{
+    align-items: center;
+}
 .navbar{
     padding: 40px 300px 10px 300px;
 }
