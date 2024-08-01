@@ -8,6 +8,8 @@ const popup = document.getElementById('popup');
 const closePopupButton = document.getElementById('closePopup');
 const closeIcon = document.getElementById('close-popup');
 
+const listItems = document.getElementById("list-item-div")
+
 let number =0;
 
 //Reveals the add items form 
@@ -27,7 +29,7 @@ closeIcon.addEventListener('click', closePopUp);
 
 //Add items
 function addItems(){
-  if(inputBox===""){
+  if(inputBox.value.trim()===""){
     alert("please add your item");
   }else{
     let li =document.createElement("li");
@@ -48,7 +50,7 @@ function addItems(){
     
     let p = document.createElement("p");
     p.id="number";
-    p.innerHTML= number
+    p.innerHTML= 0
     div.appendChild(p);
 
     let ii = document.createElement("i");
@@ -63,17 +65,16 @@ function addItems(){
     div.appendChild(iDelete);
     iDelete.addEventListener('click', function(e){
        li.remove()
+       saveData();//Makes sure data is saved after changes
     })
     
     //increment & decrement functions
-    function updateDisplay(){
-      p.innerHTML = number
-    }
     
     function addValue(event){
       event.preventDefault;
       number++;
-      updateDisplay()
+      p.innerHTML=number
+      saveData();//Makes sure data is saved after changes
     }
     
     function subtractValue(event){
@@ -82,15 +83,27 @@ function addItems(){
       }else{
       event.preventDefault;
       number--;
-      updateDisplay()
+      p.innerHTML=number
+      saveData();//Makes sure data is saved after changes
       }
     }
   }
   inputBox.value=''
+  saveData();//Makes sure data is saved after changes
 }
 
-
 saveButton.addEventListener("click", addItems)
+
+//Saves data of the container innerHTML
+function saveData(){
+  localStorage.setItem('data',listItems.innerHTML);
+}
+
+//Get all content stored in the browser with the name of 'data'
+function showTask(){
+  listItems.innerHTML = localStorage.getItem('data')
+}
+showTask();
 
 
 
