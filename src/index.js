@@ -8,6 +8,8 @@ const popup = document.getElementById('popup');
 const closePopupButton = document.getElementById('closePopup');
 const closeIcon = document.getElementById('close-popup');
 
+let number =0;
+
 //Reveals the add items form 
 function showPopUp(){
   overlay.style.display = 'block';
@@ -25,7 +27,7 @@ closeIcon.addEventListener('click', closePopUp);
 
 //Add items
 function addItems(){
-  if(inputBox ===""){
+  if(inputBox===""){
     alert("please add your item");
   }else{
     let li =document.createElement("li");
@@ -41,17 +43,27 @@ function addItems(){
     i.innerHTML += '<i class="fa-solid fa-square-minus fa-lg"></i>';
     i.id ='decrement';
     div.appendChild(i);
-
+    
     let p = document.createElement("p");
     p.id="number";
-    p.innerText=0
+    p.innerHTML= 0
     div.appendChild(p);
 
     let ii = document.createElement("i");
-      ii.innerHTML += '<i class="fa-solid fa-square-plus fa-lg" id="increment"></i>';
-      ii.id ='incrementt';
+    ii.innerHTML += '<i class="fa-solid fa-square-plus fa-lg" id="increment"></i>';
+    ii.id ='increment';
     div.appendChild(ii);
+
+    let iDelete = document.createElement("i");
+    iDelete.innerHTML +='<i class="fa-solid fa-xmark" ></i>';
+    iDelete.id = 'delete';
+    div.appendChild(iDelete);
+    iDelete.addEventListener('click', function(e){
+       li.remove()
+    })
+    
   }
+  inputBox.value=''
 }
 
 
@@ -63,19 +75,22 @@ const increment = document.getElementById('increment');
 const decrement = document.getElementById('decrement');
 const displayedValue = document.getElementById('number');
 
-let value =0;
+function updateDisplay(){
+  displayedValue.innerHTML = number
+}
 
 function addValue(event){
   event.preventDefault;
-  value++;
-  displayedValue.innerHTML = value;
+  number++;
+  updateDisplay()
 }
 
 function subtractValue(event){
   event.preventDefault;
-  value--;
-  displayedValue.innerHTML = value;
+  number--;
+  updateDisplay()
 }
 
 increment.addEventListener('click', addValue);
 decrement.addEventListener('click', subtractValue);
+

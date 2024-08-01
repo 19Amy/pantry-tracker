@@ -54,6 +54,14 @@
     font-weight: bold;
     font-size: 15px;
 }
+#delete{
+    margin-top: 6px;
+    margin-left: 10px;
+    color: transparent;
+}
+#delete:hover{
+   color: red;
+}
 
 /*MODAL*/
 .overlay {
