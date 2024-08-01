@@ -20,7 +20,7 @@
                 <a class="navbar-brand" href="#">
                    Pantry Tracker
                 </a>
-                <button class="btn " type="submit">
+                <button class="btn" id="Add-item-btn" type="submit">
                     <strong>Add item</strong>
                 </button>
             </div>
@@ -56,8 +56,8 @@
     </div>
 
     <!-- modal -->
-    
-    <div class="pop-up" >
+    <div id="overlay" class="overlay"></div>
+    <div class="pop-up" id="popup" >
         <span>
             <h3>
                 Add Items
@@ -67,10 +67,10 @@
         <form>
          <input type="text" placeholder="Add Your Item" required>
         </form>
-        <button type="button" class="btn btn-dark">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-dark" id="closePopup">Close</button>
+        <button type="button" class="btn btn-primary" >Save changes</button>
     </div>
-
+    
 
     <script src="./src/index.js"></script>
     
