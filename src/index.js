@@ -101,9 +101,13 @@ function saveData(){
 
 //Get all content stored in the browser with the name of 'data'
 function showTask(){
-  listItems.innerHTML = localStorage.getItem('data')
+  const savedData = localStorage.getItem('data');
+  if (savedData) {
+    listItems.innerHTML = savedData;
+  }
 }
-showTask();
+// Call showTask when the page loads to retrieve saved data
+document.addEventListener('DOMContentLoaded', showTask);
 
 
 
