@@ -38,13 +38,13 @@
 .counter{
     display: flex; 
 }
-.counter button{
-    background-color: black;
-    color: white;
+#decrement,#increment{
+    margin: 15px 5px 1px 5px;
+   
 }
-.counter button:hover{
-    background-color: grey;
-    color: white;
+#decrement:hover,#increment:hover{
+    
+    color: gray;
 }
 .counter p{
     padding: 5px;

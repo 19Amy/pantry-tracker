@@ -1,3 +1,4 @@
+//increment & decrement counter
 const increment = document.getElementById('increment');
 const decrement = document.getElementById('decrement');
 const displayedValue = document.getElementById('number');
