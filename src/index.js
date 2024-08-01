@@ -77,9 +77,13 @@ function addItems(){
     }
     
     function subtractValue(event){
+      if(number<=0){
+        return 0
+      }else{
       event.preventDefault;
       number--;
       updateDisplay()
+      }
     }
   }
   inputBox.value=''
