@@ -1,3 +1,4 @@
+
 .container{
     align-items: center;
 }
@@ -38,16 +39,52 @@
 .counter{
     display: flex; 
 }
-#decrement,#increment{
+#decrement,
+#increment{
     margin: 15px 5px 1px 5px;
    
 }
-#decrement:hover,#increment:hover{
-    
+#decrement:hover,
+#increment:hover{
+    cursor: pointer;
     color: gray;
 }
 .counter p{
     padding: 5px;
     font-weight: bold;
     font-size: 15px;
+}
+
+/*MODAL*/
+.pop-up{
+    background-color: beige;
+    padding: 40px 20px;
+    border-radius: 20px;
+    padding: 40px 320px;
+}
+.pop-up span{
+    margin-bottom: 5px;
+}
+.pop-up h3{
+    font-weight: bold;
+}
+.pop-up span{
+    display: flex;
+    justify-content: space-between;
+}
+.pop-up form{
+    display: flex;
+    justify-content: left;
+}
+#close-popup{
+    margin-top: 15px;
+}
+#close-popup:hover{
+    cursor: pointer;
+    color: gray;
+}
+.pop-up button{
+   margin: 5px;
+   float: right;
+   margin-bottom: 15px;
 }
