@@ -43,16 +43,19 @@ function addItems(){
     i.innerHTML += '<i class="fa-solid fa-square-minus fa-lg"></i>';
     i.id ='decrement';
     div.appendChild(i);
+    i.addEventListener("click",subtractValue)
+    
     
     let p = document.createElement("p");
     p.id="number";
-    p.innerHTML= 0
+    p.innerHTML= number
     div.appendChild(p);
 
     let ii = document.createElement("i");
     ii.innerHTML += '<i class="fa-solid fa-square-plus fa-lg" id="increment"></i>';
     ii.id ='increment';
     div.appendChild(ii);
+    ii.addEventListener("click",addValue)
 
     let iDelete = document.createElement("i");
     iDelete.innerHTML +='<i class="fa-solid fa-xmark" ></i>';
@@ -62,6 +65,22 @@ function addItems(){
        li.remove()
     })
     
+    //increment & decrement functions
+    function updateDisplay(){
+      p.innerHTML = number
+    }
+    
+    function addValue(event){
+      event.preventDefault;
+      number++;
+      updateDisplay()
+    }
+    
+    function subtractValue(event){
+      event.preventDefault;
+      number--;
+      updateDisplay()
+    }
   }
   inputBox.value=''
 }
@@ -70,27 +89,5 @@ function addItems(){
 saveButton.addEventListener("click", addItems)
 
 
-//increment & decrement counter
-const increment = document.getElementById('increment');
-const decrement = document.getElementById('decrement');
-const displayedValue = document.getElementById('number');
 
-function updateDisplay(){
-  displayedValue.innerHTML = number
-}
-
-function addValue(event){
-  event.preventDefault;
-  number++;
-  updateDisplay()
-}
-
-function subtractValue(event){
-  event.preventDefault;
-  number--;
-  updateDisplay()
-}
-
-increment.addEventListener('click', addValue);
-decrement.addEventListener('click', subtractValue);
 
